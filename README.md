@@ -1,1 +1,10 @@
-# real_time_stock_monitoring_and_alert_system
+[User Interface] <--> [Firestore (User Data)]
+                              |
+[Stock API] --> [Cloud Function (Fetch Prices)] --> [Pub/Sub Topic] --> [Cloud Function (Process and Store)]
+                                                                     |
+                                                                     v
+                                                            [Firestore (Historical Data)]
+                                                                     |
+                                                           [Cloud Function (Alert Users)]
+                                                                     |
+                                                            [Notification Service]
